@@ -35,6 +35,11 @@
     -webkit-transform: rotate(30deg);
     transform: rotate(30deg);
   }
+
+#logo{
+  border: 2px solid rgba(0, 0, 0, .85);
+  border-radius: 50px 50px 50px 50px ;
+  }
   
   .product-device::before {
     position: absolute;
@@ -102,7 +107,7 @@ h2::after {
     position: absolute;
     margin: 0 auto;
     height: 3px;
-    background: #ffdc12;
+    background: #333;
     left: 0;
     right: 0;
     bottom: -10px
@@ -111,7 +116,8 @@ h2::after {
 .carousel {
     width: 650px;
     margin: 0 auto;
-    padding-bottom: 50px
+    padding-bottom: 50px;
+  
 }
 
 .carousel .item {
@@ -121,6 +127,7 @@ h2::after {
     overflow: hidden;
     min-height: 340px
 }
+
 
 .carousel .item a {
     color: #eb7245
