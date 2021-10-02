@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="logo.jpeg">
@@ -23,24 +23,49 @@
 
   <body>
 <!--Navbar-->
-    <nav class="site-header sticky-top py-1">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2" href="#">
-          <img id='logo' src='logo.jpeg' alt="sineru labs" width="100" height="100" viewBox="0 0 24 24" >
-        </a>
-        <a class="py-2 d-none d-md-inline-block" href="#about">About</a>
-        <a class="py-2 d-none d-md-inline-block" href="#services">Services</a>
-        <a class="py-2 d-none d-md-inline-block" href="#testimonial">Testimonal</a>
-        <a class="py-2 d-none d-md-inline-block" href="#contact">Contact</a>
-       
-      </div>
-    </nav>
+<section id="nav-section">
+  <nav class="container navbar navbar-expand-md navbar-light">
+    <a class="navbar-brand" href="#">  <img id='logo' src='logo.jpeg' alt="sineru labs" width="100" height="100" viewBox="0 0 24 24" ></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="nav-elements collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav text-center ms-auto">
+        <li class="nav-item" >
+          <a class="nav-link active" aria-current="page" href="#" style="color: white">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about" style="color:white">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services" style="color: white">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#testimonial" style="color: white">Testimonials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact" style="color: white">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</section>
+
+  
 <!--Front Page-->
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
       <div class="col-md-5 p-lg-5 mx-auto my-5">
         <h1 class="display-4 font-weight-normal">Sineru Labs</h1>
         <p class="lead font-weight-normal">Engineering Consultant</p>
-        <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+        <a  class="btn btn-outline-secondary"  href="#">Coming soon</a>
       </div>
       <div class="product-device box-shadow d-none d-md-block"></div>
       <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
@@ -74,7 +99,7 @@
       </div><!-- /.row -->
       </div>
 <!-- Carousel -->
-      <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-secondary" id="testimonial">
+      <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center" id="testimonial" style="background-color:#C38D9E">
 
       <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
@@ -120,7 +145,15 @@
       
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
         <h1 class="display-4 font-weight-normal" id="contact">Contact Us</h1>
+<<<<<<< Updated upstream
         <a href="mailto:saritadevin@sinerulabs.com">Email Us</a>  
+=======
+<<<<<<< HEAD
+        <a id="linkuse" href="mailto:saritadevin@sinerulabs.com">Email Us</a>  
+=======
+        <a href="mailto:saritadevin@sinerulabs.com">Email Us</a>  
+>>>>>>> b674a6abf42ccacdf18c73141d5df3c6c917faab
+>>>>>>> Stashed changes
 
 
        
@@ -134,7 +167,7 @@
         <div class="col-12 col-md">
           <img  src='logo.jpeg' alt="sineru labs" width="100" height="100" viewBox="0 0 24 24" >
           <small class="d-block mb-3 text-muted">&copy; 2021 Sineru Labs</small>
-          <a href="#">Back to top</a>
+          <a id='linkuse' href="#">Back to top</a>
         </div>
        
       
