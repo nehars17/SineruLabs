@@ -209,7 +209,10 @@ h2::after {
     border: none;
     background: #888;
 }
-
+#linkuse{
+  color: white;
+  border-color: white;
+}
 #linkuse:hover{
   color:white;
   background-color:#722F37 ;
@@ -220,3 +223,6 @@ h2::after {
   color:#722F37 ;
     
   }
+
+
+  
