@@ -12,8 +12,16 @@
   background-image: url("hardware.jpg");
   color:white;
   background-size: cover;
+   /* Create the parallax scrolling effect */
+ background-attachment: fixed;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+
 
 }
+
+
 #coming{
   color:white;
   padding: 10px;
