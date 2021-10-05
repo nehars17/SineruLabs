@@ -17,18 +17,108 @@
  background-position: center;
  background-repeat: no-repeat;
  background-size: cover;
+ font-size: larger;
 
 
 }
 
-
-#coming{
-  color:white;
-  padding: 10px;
-  font-size: larger;
-}
-
+.scanfcode
+{
   
+  background-color:white;
+  padding:10px;
+  border:0px;
+  color:#722F37;
+  font-size:20px;
+  margin:10px 40px;
+  position:relative;
+  text-transform:uppercase;
+}
+.scanfcode:before,
+.scanfcode:after {
+  border-color: white;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content:"";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.scanfcode:before {
+  border-left-width: 2px;
+  border-top-width: 2px;
+  left: -5px;
+  top: -5px;
+}
+
+.scanfcode:after {
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+  bottom: -5px;
+  right: -5px;
+}
+.scanfcode:hover:before,
+.scanfcode:hover:after
+{
+  height:100%;
+  width:100%;
+}
+
+/* scanfcode2 */
+.scanfcode2
+{
+  background-color:transparent;
+  border:0px;
+  padding:10px 20px;
+  color:white;
+  position:relative;
+  font-size:26px;
+  margin:10px 40px;
+  position:relative;
+  text-transform:uppercase;
+  
+}
+.scanfcode2:before,
+.scanfcode2:after
+{
+  position:absolute;
+  border-color: white;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content:"";
+  height: 40px;
+  position: absolute;
+  width: 40px;
+}
+.scanfcode2:before
+{
+  border-left-width:2px;
+  left:-6px;
+  top:6px;
+}
+.scanfcode2:after
+{
+  border-right-width:2px;
+  right:-6px;
+  top:6px;
+}
+.scanfcode2:hover:before,
+.scanfcode2:hover:after
+{
+  border-top-width:2px;
+  border-left-width:0px;
+  border-bottom-width:2px;
+  border-right-width:0;
+  border-color:white;
+  top:-3px;
+  bottom:-3px;
+  width:100%;
+  height:100%;
+}
 
 #logo{
   border-radius: 50px 50px 50px 50px ;
@@ -63,15 +153,7 @@ h2::after {
 }
 
 
-#linkuse{
-  color: white;
-  border-color: white;
-}
-#linkuse:hover{
-  color:white;
-  background-color:#722F37 ;
-  
-}
+
 #linkuse2{
   
   color:#722F37 ;
@@ -81,5 +163,5 @@ h2::after {
 
 #services{
   color:white;
-  background-color:rgba(114, 47, 55,0.5) ;
+  
 }
