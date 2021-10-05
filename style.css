@@ -35,7 +35,7 @@
   }
   
 
-  body {
+body {
     font-family: "Open Sans", sans-serif;
     margin-top: 200px; 
     background-image: url("bg6.jpg");
@@ -45,7 +45,6 @@ h2 {
     color: white;
     text-align: center;
     text-transform: uppercase;
-    font-family: "Roboto", sans-serif;
     font-weight: bold;
     position: relative;
     margin: 25px 0 50px
@@ -81,5 +80,6 @@ h2::after {
 
 
 #services{
-  color: white;
+  color:white;
+  background-color:rgba(114, 47, 55,0.5) ;
 }
