@@ -11,10 +11,22 @@
 
   }
 
+#hardware{
+  background-image: url("hardware.jpg");
+  color:white;
+  background-size: cover;
+
+}
+#coming{
+  color:white;
+  padding: 10px;
+  font-size: larger;
+}
+
   /*
    * Dummy devices (replace them with your own or something else entirely!)
    */
-  
+/*   
   .product-device {
     position: absolute;
     right: 10%;
@@ -25,13 +37,13 @@
     border-radius: 21px;
     -webkit-transform: rotate(30deg);
     transform: rotate(30deg);
-  }
+  } */
 
 #logo{
   border-radius: 50px 50px 50px 50px ;
   }
   
-  .product-device::before {
+  /* .product-device::before {
     position: absolute;
     top: 10%;
     right: 10px;
@@ -49,13 +61,13 @@
     left: 5%;
     background-color: #e5e5e5;
   }
-  
+   */
   
   /*
    * Extra utilities
    */
   
-  .border-top { border-top: 1px solid #e5e5e5; }
+  /* .border-top { border-top: 1px solid #e5e5e5; }
   .border-bottom { border-bottom: 1px solid #e5e5e5; }
   
   .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
@@ -75,7 +87,7 @@
   
   .overflow-hidden { overflow: hidden; }
 
-  
+   */
   body {
     font-family: "Open Sans", sans-serif;
     margin-top: 200px; 
