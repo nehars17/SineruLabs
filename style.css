@@ -165,3 +165,7 @@ h2::after {
   color:white;
   
 }
+
+ul{
+  list-style: none;
+}
