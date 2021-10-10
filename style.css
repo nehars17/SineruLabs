@@ -157,9 +157,15 @@ h2::after {
 #linkuse2{
   
   color:#722F37 ;
+  border-color: #722F37;
     
   }
-
+#linkuse2:hover{
+    background:#722F37 ;
+    color: white;
+    
+      
+    }
 
 #services{
   color:white;
