@@ -126,7 +126,7 @@
   
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 200px; 
     background-image: url("bg6.jpg");
 }
