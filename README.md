@@ -1,1 +1,1 @@
-# nehars17.github.io
+# landing page design and web hosting for client
