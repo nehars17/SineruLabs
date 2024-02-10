@@ -2,11 +2,10 @@
     max-width: 960px;
   }
   
-  
-  #nav-section{
-    background-color: #722F37 ;
+body{
+  background-image: url('bg-2.jpg');
+}
 
-  }
 
 #hardware{
   background-image: url("hardware.jpg");
@@ -21,6 +20,7 @@
 
 
 }
+
 
 .scanfcode
 {
@@ -68,15 +68,12 @@
 
 
 
-#logo{
-  border-radius: 50px 50px 50px 50px ;
-  }
-  
+
 
 body {
-    font-family: "Open Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: "Open Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: poppins;
     margin-top: 200px; 
-    background-image: url("bg6.jpg");
 }
 
 h2 {
@@ -106,6 +103,7 @@ h2::after {
   
   color:#722F37 ;
   border-color: #722F37;
+  padding: 10px 40px; 
     
   }
 #linkuse2:hover{
@@ -123,3 +121,188 @@ h2::after {
 ul{
   list-style: none;
 }
+
+
+/* Navbar CSS */
+#nav-section {
+  background-color: #722F37; 
+  display: flex;
+  font-family: poppins;
+  align-items: center;
+  
+
+
+}
+#logo{
+  border-radius: 50px 50px 50px 50px ;
+ 
+  }
+
+
+
+#nav-item a {
+  float: left;
+  display: block;
+  color: #ddd;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+
+ 
+}
+#nav-section a{
+  color:  white;
+}
+#nav-section a:hover {
+  color:  #BA4073;
+}
+
+
+
+.form-group label{
+  font-weight: bold;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+h2{
+  font-family: poppins;
+  font-size: smaller;
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h2 {
+  color: #fff;
+  font-family: poppins;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #722F37; /* The typwriter cursor */
+  white-space: nowrap; 
+  /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .7s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white }
+}
+
+.services .icon-box {
+  margin-bottom: 20px;
+ 
+
+  
+}
+
+.services .icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  background: 722F37;
+  border-radius: 50%;
+  transition: 0.5s;
+  border: 1px solid 722F37;
+}
+
+.services .icon i {
+  color: white;
+  font-size: 24px;
+  line-height: 0;
+}
+
+.services .icon-box:hover .icon {
+  background: #fff;
+}
+
+.services .icon-box:hover .icon i {
+  color: #722F37;
+}
+
+.services .title {
+  margin-left: 80px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+
+}
+
+
+.services .description {
+  margin-left: 80px;
+  line-height: 24px;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+/* Contact */
+
+/* #formmargin{
+  margin-left: 50%;
+} */
+
+body{
+  background-color: #25274d;
+}
+.contact{
+  padding: 4%;
+  height: 400px;
+}
+.col-md-3{
+  background: #722F37;
+  padding: 4%;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.contact-info{
+  margin-top:10%;
+}
+.contact-info h4{
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}
+.contact-info img{
+  margin-bottom: 15%;
+}
+.contact-info h2{
+  margin-bottom: 10%;
+}
+.col-md-9{
+  background: #fff;
+  padding: 3%;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.contact-form label{
+  font-weight:600;
+}
+
