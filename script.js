@@ -15,27 +15,47 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
-// document.addEventListener('scroll', () => {
-//   const scrollText = document.querySelector('.scroll-text');
-//   const words = document.querySelectorAll('.word');
-//   const scrollPosition = window.scrollY;
-//   const pageSegment = document.querySelector('.page-content');
 
 
-//   // Adjust the top position based on scroll position
-//   scrollText.style.top = `${100 - (scrollPosition / window.innerHeight) * 400}%`;
 
-//   words.forEach((word, index) => {
-//       const revealPoint = (index + 1) * window.innerHeight / (words.length * 4 );
-//       if (scrollPosition >= revealPoint) {
-//           word.style.opacity = 1;
-//       } else {
-//           word.style.opacity = 0;
-//       }
-//   });
-//   //make div segment appear 
-//   pageSegment.style.display = 'block' ;
 
-// });
+gsap.config({ trialWarn: false });
+console.clear();
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText);
+const split = new SplitText(".textp", { type: "lines" });
+split.lines.forEach((target) => {
+  gsap.to(target, {
+    backgroundPositionX: 0,
+    ease: "none",
+    scrollTrigger: {
+      trigger: target,
+      scrub: 1,
+      start: "top center",
+      end: "bottom center"
+    }
+  });
+});
 
+
+let didScroll = false;
+let paralaxTitles = document.querySelectorAll('.paralax-title');
+
+const scrollInProgress = () => {
+  didScroll = true
+}
+
+const raf = () => {
+  if (didScroll) {
+    paralaxTitles.forEach((element, index) => {
+      element.style.transform = "translateX(" + window.scrollY / 10 + "%)"
+    })
+    didScroll = false;
+  }
+  requestAnimationFrame(raf);
+}
+
+
+requestAnimationFrame(raf);
+window.addEventListener('scroll', scrollInProgress)
 

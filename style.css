@@ -1,114 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  overflow: auto;
-  /* Allow page scrolling */
-  height: 100vh;
-  /* Ensure body takes full viewport height */
+  /*   height: 300vh; */
+  overflow-x: hidden;
+  background-color: #161616;
+  min-height: 3000px;
 
 }
 
-#hardware img {
-  width: 750px;
-  height: 450px;
-
-}
-
-.overlay-text {
-  position: absolute;
-  margin-left: 25%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
-  border-radius: 5px;
-
-
-}
-
-body {
-  font-family: "Open Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 200px;
-}
-
-
-
-.title {
-  background: linear-gradient(-45deg, #eeaa52, #e73c6f, #2394d5, #2af3b7);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-h2 {
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  position: relative;
-  margin: 25px 0 50px
-}
-
-h2::after {
-  content: "";
-  width: 100px;
-  position: absolute;
-  margin: 0 auto;
-  height: 3px;
-  background: whitesmoke;
-  left: 0;
-  right: 0;
-  bottom: -10px
-}
-
-
-
-ul {
-  list-style: none;
-}
-
-
-/* Navbar CSS */
+/* General Styles for Navbar */
 #nav-section {
-  display: flex;
-  font-family: poppins;
-  align-items: center;
-
-
-
+  background-color: #000;
+  /* Dark background for the navbar */
+  position: sticky;
+  /* Keeps navbar fixed on scroll */
+  top: 0;
+  z-index: 100;
 }
 
-.container {
-  position: relative;
-  display: inline-block;
-  /* Ensures the container takes the size of the logo */
-  max-width: 960px;
+.navbar {
+  padding: 15px 30px;
+  font-family: Montserrat, sans-serif;
 }
 
 .navbar-brand {
-  display: inline-block;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-#logo {
-  width: 100px;
-  height: 100px;
-}
-
-
-#nav-item a {
-  float: left;
-  display: block;
-  color: #ddd;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
-
-
-}
-
 
 #nav-section .contact-button {
   font-size: 20px;
@@ -124,15 +45,188 @@ ul {
 
 }
 
-#logo-text {
-  font-size: 5.1em;
-  font-weight: 900;
-  /* background: linear-gradient(135deg, #92fe9d, #00c9ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-  line-height: 7.26rem;
-  letter-spacing: 0.18rem;
+#logo {
+  border-radius: 50%;
 }
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item {
+  margin-left: 25px;
+}
+
+.navbar-nav .nav-item .contact-button {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .contact-button:hover {
+  color: #f9b408;
+  /* Highlight color on hover */
+}
+
+/* Front Page Styles */
+.container-intro.projects {
+  position: relative;
+  height: 100vh;
+  background: url('hardware.jpg') center/cover no-repeat;
+  /* Add an image for the front page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.Logo-Text {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+  /* Adding a shadow for better contrast */
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Dark overlay to create contrast */
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .Logo-Text {
+    font-size: 2.5rem;
+    /* Adjust font size for smaller screens */
+  }
+}
+
+.montserrat-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Outer container styling */
+.outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  /* Full height */
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section title styling */
+.section-title {
+  font-size: 3rem;
+  /* Large title size */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Parallax effect for the title */
+.parallax-title {
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: inherit;
+  font-weight: inherit;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Slight background for text contrast */
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.parallax-title:hover {
+  transform: translateY(-5px);
+  background-color: #007bff;
+  /* Hover effect with blue */
+  color: white;
+}
+
+/* Description styling */
+.section-description {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #e5e5e5;
+  /* Lighter text for the description */
+}
+
+/* CTA Button container */
+.cta-button-container {
+  margin-top: 40px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background-color: black;
+  color: white;
+  font-size: 1.25rem;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #00c9ff;
+  /* Darker blue on hover */
+  color: white;
+  text-decoration: none;
+  transform: translateY(-3px);
+  /* Slight lift effect */
+}
+
+/* Optional: Parallax animation on the title */
+.parallax-title {
+  animation: parallax 3s infinite alternate;
+}
+
+@keyframes parallax {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-15px);
+    /* Adjust this for desired parallax speed */
+  }
+}
+
+
+
 
 .form-group label {
   font-weight: bold;
@@ -153,146 +247,19 @@ ul {
   padding-top: 60px;
 }
 
-.dropping-texts {
-  display: inline-block;
-  width: 180px;
-  text-align: left;
-  height: 60px;
-  vertical-align: -2px;
-}
 
-.dropping-body {
-  text-align: center;
-  padding-top: 20vh;
+.textbody {
   color: white;
   font-size: 70px;
-  font-weight: 700;
+  text-align: center;
+  display: inline-block;
   overflow: hidden;
-  /* font-family: "Open Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-  font-family: poppins;
-  animation: bg 5s linear infinite;
+  white-space: nowrap;
 }
 
-.alltexts {
-  margin-bottom: 10%;
-}
 
-.dropping-texts>div {
-  font-size: 0px;
-  opacity: 0;
-  margin-left: -30px;
-  position: absolute;
-  font-weight: 700;
-  box-shadow: 0px 60px 25px -20px rgba(0, 0, 0, 0.5);
-}
 
-.dropping-texts>div:nth-child(1) {
-  animation: roll 5s linear infinite 0s;
-}
-
-.dropping-texts>div:nth-child(2) {
-  animation: roll 5s linear infinite 1s;
-}
-
-.dropping-texts>div:nth-child(3) {
-  animation: roll 5s linear infinite 2s;
-}
-
-.dropping-texts>div:nth-child(4) {
-  animation: roll2 5s linear infinite 3s;
-}
-
-@keyframes roll {
-  0% {
-    font-size: 0px;
-    opacity: 0;
-    margin-left: -30px;
-    margin-top: 0px;
-    transform: rotate(-25deg);
-  }
-
-  3% {
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-
-  5% {
-    font-size: inherit;
-    opacity: 1;
-    margin-left: 0px;
-    margin-top: 0px;
-  }
-
-  20% {
-    font-size: inherit;
-    opacity: 1;
-    margin-left: 0px;
-    margin-top: 0px;
-    transform: rotate(0deg);
-  }
-
-  27% {
-    font-size: 0px;
-    opacity: 0.5;
-    margin-left: 20px;
-    margin-top: 100px;
-  }
-
-  100% {
-    font-size: 0px;
-    opacity: 0;
-    margin-left: -30px;
-    margin-top: 0px;
-    transform: rotate(15deg);
-  }
-}
-
-/* @keyframes roll2 {
-  0% {
-    font-size: 0px;
-    opacity: 0;
-    margin-left: -30px;
-    margin-top: 0px;
-    transform: rotate(-25deg);
-  }
-
-  3% {
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-
-  5% {
-    font-size: inherit;
-    opacity: 1;
-    margin-left: 0px;
-    margin-top: 0px;
-  }
-
-  30% {
-    font-size: inherit;
-    opacity: 1;
-    margin-left: 0px;
-    margin-top: 0px;
-    transform: rotate(0deg);
-  }
-
-  37% {
-    font-size: 1500px;
-    opacity: 0;
-    margin-left: -1000px;
-    margin-top: -800px;
-  }
-
-  100% {
-    font-size: 0px;
-    opacity: 0;
-    margin-left: -30px;
-    margin-top: 0px;
-    transform: rotate(15deg);
-  }
-} */
-
-.bg{
+.bg {
   background: linear-gradient(-45deg, #eeaa52, #e73c6f, #2394d5, #2af3b7);
 
 }
@@ -343,95 +310,93 @@ ul {
   }
 }
 
- 
-#xyz {
-    color: white; 
-    font-size: 120px;
-    position: absolute;
-    display: inline-block;
-    white-space: nowrap;
-    font-weight: bold;
-    margin-top: 0%;
-    overflow: hidden;
-    animation: textreveal 4s infinite alternate;
-  }
 
-  #ball {
-    position: absolute;
-    top: 27.5px;
-    left: 50px;
-    height: 98px;
-    width: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    border-radius: 50%;
-    animation: ballmove 4s infinite alternate;
-    background: linear-gradient(-45deg, #eeaa52, #e73c6f, #2394d5, #2af3b7);
-    z-index: 1;
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
-  }
-  
-  @keyframes ballmove {
-    0%{transform: translate(0px, 8.5px) scale(0.1);}
-    10%{transform: translateX(0px) scale(0.5);}
-    40%{transform: translateX(655px) scale(0.5);}
-    60%{transform: translate(650px, 8.5px) scale(0.1);}
-    70%{transform: translate(650px, 8.5px) scale(0.15);}
-    80%{transform: translate(650px, 8.5px) scale(0.1);}
-    90%{transform: translate(650px, 8.5px) scale(0.15);}
-    100%{transform: translate(650px, 8.5px) scale(0.1);}
-  }
-  
-  @keyframes textreveal {
-    0% {width: 0;}
-    10% {width: 0;}
-    40% {width: 650px;}
-    100% {width: 650px;}
-  }
-  
 
-/* DEMO-SPECIFIC STYLES */
-.typewriter h2 {
-  color: #fff;
-  font-family: poppins;
-  overflow: hidden;
-  /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid #722F37;
-  /* The typwriter cursor */
-  white-space: nowrap;
-  /* Keeps the content on a single line */
-  margin: 0 auto;
-  /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em;
-  /* Adjust as needed */
-  animation:
-    typing 3.5s steps(20, end),
-    blink-caret .7s step-end infinite;
+:root {
+  --primary-color: #6CD9CE;
+  --secondary-color: #D93BA1;
+  --complimentary-color: #2E2473;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0
+.container-intro {
+  min-height: 100vh;
+  position: relative;
+  width: 100vw;
+  display: flex;
+  background-color: var(--complimentary-color);
+  justify-content: center;
+  align-items: center;
+  font-family: 'Noto Serif', sans-serif;
+  position: relative;
+}
+
+.Logo-Text {
+  font-size: 150px;
+  color: white;
+  transform: translateY(-600px);
+  animation: 1.2s slideIn ease-in-out forwards 1s;
+  z-index: 10;
+  opacity: 0;
+  position: relative;
+}
+
+.Logo-Text::before {
+  content: '';
+  width: 0%;
+  height: 76px;
+
+  position: absolute;
+  bottom: -10px;
+  animation: 1s underline ease-in-out forwards 2s;
+  mix-blend-mode: screen;
+
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  /* background-color: var(--secondary-color); */
+
+  transform: scale(.5);
+  /* Full height */
+  height: 100%;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: .5s slideIn ease-in-out forwards, 1s skewBg ease-in-out;
+}
+
+@keyframes skewBg {
+  0% {
+    transform: scale(.5);
   }
 
-  to {
-    width: 100%
+  100% {
+    transform: scale(1);
   }
 }
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-
-  from,
-  to {
-    border-color: transparent
-  }
-
-  50% {
-    border-color: white
+@keyframes underline {
+  100% {
+    width: 100%;
   }
 }
+
+@keyframes slideIn {
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+
 
 
 .services .title {
@@ -439,20 +404,44 @@ ul {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 40px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-
+  font-family: 'Noto Serif', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #eeaa52, #e73c6f, #2394d5, #2af3b7);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  /* Ensure the gradient is clipped to the text */
+  color: transparent;
+  /* Set text color to transparent so the gradient shows */
 }
 
 
 .services .description {
   list-style: disc;
   line-height: 24px;
-  font-size: 15px;
-  font-family: poppins;
-
-
+  font-size: 14px;
+  font-family: Montserrat, sans-serif;
+  background: rgba(255, 255, 255, 0.1);
+  /* Transparent white background */
+  border-radius: 12px;
+  /* Rounded corners */
+  padding: 20px;
+  /* Add space inside the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Soft shadow for the card */
+  margin-right: 20px;
+  margin-bottom: 20px;
+  /* Space between multiple cards if present */
+  backdrop-filter: blur(5px);
+  /* Slight blur effect on the background */
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition on hover */
 }
+
+.services .description:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  /* Slightly larger shadow on hover */
+}
+
 
 #contact2 {
   background-color: black;
@@ -525,13 +514,6 @@ ul {
   pointer-events: none;
 }
 
-/* Form section */
-/* .col-md-8 {
-  padding: 40px;
-  background: black;
-  color: #333;
-  flex: 2;
-} */
 
 .contact-heading {
   text-align: center;
@@ -540,7 +522,7 @@ ul {
   position: relative;
   padding: 10px;
   border-radius: 5px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Noto Serif', Tahoma, Geneva, Verdana, sans-serif;
 
 
 }
@@ -554,85 +536,30 @@ ul {
 .contact-form .form-group {
   margin-bottom: 20px;
   position: relative;
-  font-family: poppins;
 }
 
 .contact-form .form-control {
   background: none;
   border: none;
+  text-align: center;
   border-bottom: 2px solid #ddd;
+  margin-left: 20px;
   color: #333;
   padding: 10px 0;
   width: 100%;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
   border-radius: 0;
-}
-
-.contact-form .form-control::placeholder {
-  color: #999;
-}
-
-.contact-form .form-control:focus {
+  color: white;
   background: linear-gradient(-45deg, #eeaa52, #e73c6f, #2394d5, #2af3b7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-bottom: 2px solid #00c9ff;
+  border: 2px solid #00c9ff;
   box-shadow: none;
-
-}
-
-.contact-form textarea.form-control {
-  height: auto;
-}
-
-.btnsubmit {
-  padding: 20px 60px;
-  border: none;
-  outline: none;
-  position: relative;
-  border-radius: 5px;
-  border-style: 2px;
-  background: linear-gradient(-45deg, #eeaa52, #e73c6f, #2394d5, #2af3b7);
-  cursor: pointer;
-  z-index: 1;
-  color: white;
-}
-
-.btnsubmit::before {
-  content: "";
-  position: absolute;
-  left: 1px;
-  right: 1px;
-  top: 1px;
-  bottom: 1px;
-  border-radius: 4px;
-  background-color: black;
-  z-index: -1;
-}
-
-.btnsubmit:hover::before {
-  opacity: 50%;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-
-.btnsubmit:hover::after {
-  color: white;
 }
 
 
-a {
-  color: #00c9ff;
-  text-decoration: none;
-}
 
-a:hover {
-  color: #007f7f;
-  text-decoration: underline;
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -669,9 +596,12 @@ a:hover {
 
 .icon-box img {
   margin-right: 20px;
+  margin-left: 40px;
   width: 400px;
   height: 300px;
+  border-radius: 25%;
   object-fit: cover;
+
 }
 
 .icon-box.active {
@@ -679,12 +609,6 @@ a:hover {
   transform: translateY(0);
 }
 
-.icon-box .title {
-  margin-top: 10px;
-  max-width: 400px;
-
-
-}
 
 .icon-box .description {
   margin-left: 5%;
