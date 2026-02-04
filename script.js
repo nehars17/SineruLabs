@@ -23,14 +23,13 @@ window.addEventListener("scroll", reveal);
 gsap.config({ trialWarn: false });
 console.clear();
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(SplitText);
-const split = new SplitText(".textp", { type: "lines" });
-split.lines.forEach((target) => {
-  gsap.to(target, {
+// Animate each .textp element on scroll (no SplitText)
+document.querySelectorAll('.textp').forEach((el) => {
+  gsap.to(el, {
     backgroundPositionX: 0,
     ease: "none",
     scrollTrigger: {
-      trigger: target,
+      trigger: el,
       scrub: 1,
       start: "top center",
       end: "bottom center"
