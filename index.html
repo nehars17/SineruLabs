@@ -197,7 +197,21 @@
                 </button>
               </div>
               <div id="copyBanner" class="alert alert-success text-center mt-4"
-                style="display:none; position:fixed; bottom:32px; right:32px; z-index:9999; min-width:250px; box-shadow:0 4px 24px rgba(0,0,0,0.18);">
+                style="display:none; position:fixed; bottom:32px; right:32px; z-index:9999; min-width:250px; max-width:90vw; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding: 1rem 1.5rem; border-radius: 1rem;">
+              <style>
+                @media (max-width: 600px) {
+                  #copyBanner {
+                    right: 8px !important;
+                    left: 8px !important;
+                    bottom: 16px !important;
+                    min-width: unset !important;
+                    width: auto !important;
+                    max-width: 95vw !important;
+                    font-size: 1rem !important;
+                    padding: 0.75rem 1rem !important;
+                  }
+                }
+              </style>
                 Email copied to clipboard!
               </div>
             </div>
