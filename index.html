@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-  
+
   <link rel="icon" href="logo.jpeg">
 
   <title>Sineru Labs</title>
@@ -20,140 +20,221 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+  <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
 
 
 </head>
 
 <body style="background-color: black;">
-  <section id="nav-section">
-    <nav class="container navbar navbar-expand-md navbar-dark">
-      <a class="navbar-brand" href="#">
-        <img id="logo" src="logo.jpeg" alt="Sineru Labs" width="100" height="100" />
-      </a>
-      <div class="nav-elements collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav text-center ms-auto">
-          <li class="nav-item">
-            <a class="montserrat-text contact-button" href="#contact">CONTACT US</a>
-          </li>
-        </ul>
+  <header id="nav-section" class="sticky-top shadow-sm">
+    <nav class="navbar navbar-dark bg-black py-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <img id="logo" src="logo.jpeg" alt="Sineru Labs" width="48" height="48" />
+          <span class="fw-bold fs-3 montserrat-text">Sineru Labs</span>
+        </a>
+        <div>
+          <a class="btn btn-maroon px-4 py-2 rounded-pill fw-bold ms-2" href="#contact">Start a Project</a>
+        </div>
       </div>
     </nav>
-  </section>
-  
+  </header>
+
   <!-- Front Page -->
-  <div class="container-intro projects">
-    <h1 class="Logo-Text">Sineru Labs</h1>
-    <div class="overlay"></div>
-  </div>
-  
-
-
-  <div class="outer-container">
-    <h2 class="section-title">
-      <span class="parallax-title">Engineering Consultant</span>
-    </h2>
-    <p class="section-description">We provide cutting-edge engineering solutions for businesses looking to innovate and optimize their operations. Let us help you transform your ideas into reality.</p>
-    <div class="cta-button-container">
-      <a href="#services" class="cta-button">Explore Our Services</a>
+  <section class="hero-section position-relative d-flex align-items-center justify-content-center text-center"
+    style="min-height: 90vh;">
+    <div class="hero-bg"></div>
+    <div class="container position-relative" style="z-index:2;">
+      <h1 class="display-1 fw-bold mb-4 montserrat-text text-white" style="letter-spacing:2px;">Engineering.
+        Innovation.<br>Reliability.</h1>
+      <p class="lead mb-5 text-white" style="font-size:1.5rem;">Sineru Labs delivers cutting-edge solutions for modern
+        businesses.</p>
+      <a href="#services" class="btn btn-maroon btn-lg rounded-pill fw-bold shadow" id="exploreServicesBtn">Explore Our
+        Services</a>
     </div>
-  </div>
-  
-
+  </section>
 
 
   <div id="page-segment">
-    <section id="services" class="services parallax">
-      <div>
-        <br>
-
-        <div class="row" id="servicesRow">
-
-          <div class="icon-box" data-aos="fade-up">
-            <img src="service1.jpg" alt="Radio Frequency & Antenna Design">
-
-            <h4 class="title">Radio Frequency & Antenna Design</h4>
-            <p class="montserrat-text description">Specializing in Bluetooth, Wi-Fi, GPS, and other 2.4 GHz/915 MHz ISM
-              band
-              technologies, our expert circuit designs ensure superior performance and seamless connectivity for all
-              your devices.
-
-            </p>
+    <section id="services" class="py-5 bg-black">
+      <div class="container">
+        <h2 class="text-center mb-5 fw-bold montserrat-text">Our Services</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div
+              class="service-card-alt d-flex flex-column flex-md-row bg-black text-white rounded-4 shadow p-4 mb-4 h-100">
+              <div class="flex-grow-1 pe-md-4 d-flex flex-column justify-content-center">
+                <h3 class="fw-bold mb-2" style="color:#fff; font-size:2rem;">Radio Frequency & Antenna Design</h3>
+                <p class="text-white-50">Bluetooth, Wi-Fi, GPS, ISM band technologies. Superior performance and seamless
+                  connectivity for your devices.</p>
+              </div>
+              <div class="d-flex align-items-center justify-content-center">
+                <img src="service1.jpg" alt="Radio Frequency & Antenna Design" class="rounded-3" style=" border-radius: 1.5rem;
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;">
+              </div>
+            </div>
           </div>
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-            <img src="service2.jpg" alt="Low Noise Analog and Power Supply Architecture Design">
-            <h4 class="title">Low Noise Analog and Power Supply Architecture Design</h4>
-            <p class="montserrat-text description">Our expertise in low-noise transimpedance amplifiers, instrumentation
-              amplifiers, and
-              analog-to-digital conversion ensures precise, high-performance solutions for your advanced electronic
-              applications.</p>
+          <div class="col-md-6">
+            <div
+              class="service-card-alt d-flex flex-column flex-md-row bg-white text-black rounded-4 shadow p-4 mb-4 h-100">
+              <div class="flex-grow-1 pe-md-4 d-flex flex-column justify-content-center">
+                <h3 class="fw-bold mb-2" style="color:#800000; font-size:2rem;">Low Noise Analog & Power Supply</h3>
+                <p class="text-black-50">Low-noise amplifiers, analog-to-digital conversion for precise,
+                  high-performance electronics.</p>
+              </div>
+              <div class="d-flex align-items-center justify-content-center">
+                <img src="service2.jpg" alt="Low Noise Analog and Power Supply Architecture Design" class="rounded-3"
+                  style=" border-radius: 1.5rem;
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;">
+              </div>
+            </div>
           </div>
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-            <img src="service4.jpg" alt="Regulatory Compliance">
-            <h4 class="title">Regulatory Compliance</h4>
-            <p class="montserrat-text description">We provide comprehensive FCC compliance services, specializing in
-              EMC/EMI/ESD design
-              and testing to ensure your devices meet all regulatory standards and perform reliably in any environment.
-            </p>
-          </div>
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-            <img src="service3.jpg" alt="Micro Controller Architecture & Firmware">
-            <h4 class="title">Micro Controller Architecture & Firmware</h4>
-          </div>
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-            <img src="service5.jpg" alt="Automotive Reliability & 20+ Year Life Cycle Design">
-            <h4 class="title">Automotive Reliability & 20+ Year Life Cycle Design</h4>
-          </div>
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="500">
-            <img src="service6.jpg" alt="Software Development">
-            <h4 class="title">Software Development</h4>
-            <p class="montserrat-text description">
-              We offer programming services in Python and Java, along with comprehensive website development and design,
-              ensuring robust and user-friendly digital solutions.
-            </p>
-
-            </p>
-          </div>
-
-
         </div>
-    </section><!-- End Services Section -->
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div
+              class="service-card-alt d-flex flex-column flex-md-row bg-white text-black rounded-4 shadow p-4 mb-4 h-100">
+              <div class="flex-grow-1 pe-md-4 d-flex flex-column justify-content-center">
+                <h3 class="fw-bold mb-2" style="color:#800000; font-size:2rem;">Regulatory Compliance</h3>
+                <p class="text-black-50">FCC compliance, EMC/EMI/ESD design and testing for reliable,
+                  standards-compliant devices.</p>
+              </div>
+              <div class="d-flex align-items-center justify-content-center">
+                <img src="service4.jpg" alt="Regulatory Compliance" class="rounded-3" style=" border-radius: 1.5rem;
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div
+              class="service-card-alt d-flex flex-column flex-md-row bg-black text-white rounded-4 shadow p-4 mb-4 h-100">
+              <div class="flex-grow-1 pe-md-4 d-flex flex-column justify-content-center">
+                <h3 class="fw-bold mb-2" style="color:#fff; font-size:2rem;">Micro Controller & Firmware</h3>
+                <p class="text-white-50">Custom microcontroller solutions and firmware for robust, scalable embedded
+                  systems.</p>
+              </div>
+              <div class="d-flex align-items-center justify-content-center">
+                <img src="service3.jpg" alt="Micro Controller Architecture & Firmware" class="rounded-3" style=" border-radius: 1.5rem;
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div
+              class="service-card-alt d-flex flex-column flex-md-row bg-black text-white rounded-4 shadow p-4 mb-4 h-100">
+              <div class="flex-grow-1 pe-md-4 d-flex flex-column justify-content-center">
+                <h3 class="fw-bold mb-2" style="color:#fff; font-size:2rem;">Automotive Reliability & Life Cycle</h3>
+                <p class="text-white-50">Designing for automotive reliability and long-term product life cycles,
+                  ensuring durability and performance.</p>
+              </div>
+              <div class="d-flex align-items-center justify-content-center">
+                <img src="service5.jpg" alt="Automotive Reliability & 20+ Year Life Cycle Design" class="rounded-3"
+                  style=" border-radius: 1.5rem;
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div
+              class="service-card-alt d-flex flex-column flex-md-row bg-white text-black rounded-4 shadow p-4 mb-4 h-100">
+              <div class="flex-grow-1 pe-md-4 d-flex flex-column justify-content-center">
+                <h3 class="fw-bold mb-2" style="color:#800000; font-size:2rem;">Software Development</h3>
+                <p class="text-black-50">Programming in Python and Java, plus website development and design for robust,
+                  user-friendly digital solutions.</p>
+              </div>
+              <div class="d-flex align-items-center justify-content-center">
+                <img src="service6.jpg" alt="Software Development" class="rounded-3" style=" border-radius: 1.5rem;
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
     <!--Contact-->
 
 
-    <section id="contact">
-      <div class="container contact position-relative p-3 p-md-5 m-md-3">
-        <div class="col-md-8 contact-info">
-          <p class="contact-heading">Contact Us</p>
-          <p class="montserrat-text">feel free to contact us and we will get back to you as soon as we can.</p>
-          <div class="contact-form">
-            <form>
-              <div class="form-group">
-                <input type="text" class="montserrat-text form-control" id="name" placeholder="Enter Name" value="saritadevin@sinerulabs.com" disabled name="name">
+    <section id="contact" class="py-5 bg-black">
+      <div class="container">
+        <div class="row align-items-center justify-content-center g-5">
+          <div class="col-lg-6">
+            <div class="text-lg-start text-center">
+              <h2 class="fw-bold montserrat-text mb-4" style="font-size:2.5rem;color:#800000;">Let's Connect</h2>
+              <p class="mb-4" style="font-size:1.25rem;color:#eee;max-width:500px;">Have a project in mind or want to discuss your next big idea? Reach out and let's build something great together.</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-card p-5 bg-dark rounded-4 shadow text-center" style="color:#fff;">
+              <h3 class="mb-3 fw-bold montserrat-text" style="color:#fff;">Contact Us</h3>
+              <p class="mb-4" style="color:#ccc;">Send us an email or copy our address below:</p>
+              <div class="d-flex justify-content-center gap-3 mb-3 flex-wrap">
+                <button type="button" class="btn btn-maroon px-4 py-2 fw-bold" id="openGmailBtn">
+                  <i class="bi bi-envelope-open"></i> Open in Gmail
+                </button>
+                <button type="button" class="btn btn-maroon px-4 py-2 fw-bold" id="copyEmailBtn">
+                  <i class="bi bi-clipboard"></i> Copy Email
+                </button>
               </div>
-            
-            </form>
+              <div id="copyBanner" class="alert alert-success text-center mt-4"
+                style="display:none; position:fixed; bottom:32px; right:32px; z-index:9999; min-width:250px; box-shadow:0 4px 24px rgba(0,0,0,0.18);">
+                Email copied to clipboard!
+              </div>
+            </div>
           </div>
         </div>
-
-
       </div>
-
     </section>
 
 
 
     <!--Footer-->
-    <footer style="margin-top: 50%;">
-      <small class="d-block mb-3 text-muted">&copy; 2021 Sineru Labs</small>
+    <footer class="py-4 bg-black border-top">
+      <div class="container text-center">
+        <small class="text-muted" style="color:#a52a2a;font-weight:500;">&copy; 2026 Sineru Labs. All rights
+          reserved.</small>
+      </div>
     </footer>
-  </div>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.getElementById('exploreServicesBtn');
+        if (btn) {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            var target = document.getElementById('services');
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        }
+      });
+    </script>
 
 </body>
 
- 
+
 <!-- Bootstrap core JavaScript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

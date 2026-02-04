@@ -1,3 +1,4 @@
+const email = 'saritadevin@sinerulabs.com'; // Ensure this email is used in the contact section
 function reveal() {
   var reveals = document.querySelectorAll(".icon-box");
 
@@ -58,4 +59,55 @@ const raf = () => {
 
 requestAnimationFrame(raf);
 window.addEventListener('scroll', scrollInProgress)
+
+// Contact Us: Gmail and Copy Email
+
+document.addEventListener('DOMContentLoaded', function() {
+  const openGmailBtn = document.getElementById('openGmailBtn');
+  const copyEmailBtn = document.getElementById('copyEmailBtn');
+  const copyBanner = document.getElementById('copyBanner');
+  const email = 'saritadevin@sinerulabs.com';
+
+  if (openGmailBtn) {
+    openGmailBtn.addEventListener('click', function() {
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`, '_blank');
+    });
+  }
+
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', function() {
+      // Fallback for older browsers
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(email).then(function() {
+          if (copyBanner) {
+            copyBanner.style.display = 'block';
+            setTimeout(function() {
+              copyBanner.style.display = 'none';
+            }, 2000);
+          }
+        }, function() {
+          alert('Failed to copy email.');
+        });
+      } else {
+        // Fallback for browsers without navigator.clipboard
+        const tempInput = document.createElement('input');
+        tempInput.value = email;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        try {
+          document.execCommand('copy');
+          if (copyBanner) {
+            copyBanner.style.display = 'block';
+            setTimeout(function() {
+              copyBanner.style.display = 'none';
+            }, 2000);
+          }
+        } catch (err) {
+          alert('Failed to copy email.');
+        }
+        document.body.removeChild(tempInput);
+      }
+    });
+  }
+});
 
