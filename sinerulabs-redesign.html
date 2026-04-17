@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sineru Labs — Engineering. Innovation. Reliability.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0b0d0f;
+    --ink-2: #1c2026;
+    --ink-3: #2e3540;
+    --mid: #4a5568;
+    --muted: #8a96a8;
+    --rule: rgba(255,255,255,0.07);
+    --rule-light: rgba(255,255,255,0.12);
+    --accent: #e8f0fe;
+    --accent-bright: #7ca4f4;
+    --accent-glow: #4a7cf4;
+    --warm: #f4c87c;
+    --surface: #111419;
+    --surface-2: #161b22;
+    --surface-3: #1d2330;
+    --text: #e8eaf0;
+    --text-2: #9aa3b8;
+    --text-3: #5a6478;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--ink);
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Grid overlay ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 130px; /* Increased to fit expanded logo */
+    border-bottom: 1px solid var(--rule);
+    background: rgba(11,13,15,0.88);
+    backdrop-filter: blur(12px);
+    transition: height 0.3s cubic-bezier(.22,.68,.43,1.01);
+  }
+  @media (max-width: 960px) {
+    nav { height: 80px; }
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-logo .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent-glow);
+    box-shadow: 0 0 8px var(--accent-glow);
+    flex-shrink: 0;
+  }
+
+  .nav-logo-img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(74,124,244,0.10);
+    background: #fff;
+    object-fit: cover;
+    transition: width 0.3s cubic-bezier(.22,.68,.43,1.01), height 0.3s cubic-bezier(.22,.68,.43,1.01), box-shadow 0.3s;
+  }
+
+  .nav-logo:hover .nav-logo-img {
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 8px 32px rgba(74,124,244,0.18);
+    z-index: 10;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--accent-bright);
+    padding: 8px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .nav-cta:hover { background: #a0bfff; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 48px 80px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-label::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent-bright);
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(52px, 8vw, 110px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    max-width: 900px;
+    margin-bottom: 40px;
+  }
+
+  h1 .accent-word {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.3);
+  }
+
+  h1 .highlight {
+    color: var(--accent-bright);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-2);
+    max-width: 460px;
+    margin-bottom: 48px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .btn-primary {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--text);
+    padding: 14px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover { background: #c8d8f8; transform: translateY(-1px); }
+
+  .btn-ghost {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-2);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--text); }
+
+  .btn-arrow {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  .btn-ghost:hover .btn-arrow { transform: translateX(4px); }
+
+  /* Hero decorative */
+  .hero-corner {
+    position: absolute;
+    bottom: 60px;
+    right: 48px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-3);
+    text-align: right;
+    line-height: 2;
+  }
+
+  .hero-stats {
+    position: absolute;
+    bottom: 48px;
+    left: 48px;
+    display: flex;
+    gap: 48px;
+  }
+
+  .stat-item {}
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-top: 2px;
+  }
+
+  /* Giant bg number */
+  .hero-bg-num {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(200px, 30vw, 420px);
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.04);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+
+  /* ── SECTION SCAFFOLD ── */
+  section {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule-light);
+  }
+
+  .section-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: clamp(32px, 4vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--text);
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 72px;
+    font-weight: 300;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.1);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  /* ── SERVICES ── */
+  .services-section {
+    padding: 120px 48px;
+    background: var(--surface);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule-light);
+    border: 1px solid var(--rule-light);
+  }
+
+  .service-card {
+    background: var(--surface);
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+
+  .service-card:hover {
+    background: var(--surface-3);
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-glow);
+    transition: width 0.4s ease;
+  }
+
+  .service-card:hover::before { width: 100%; }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 28px;
+    opacity: 0.7;
+  }
+
+  .service-num {
+    position: absolute;
+    top: 28px; right: 32px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-3);
+  }
+
+  .service-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text-2);
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 20px;
+  }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 3px 8px;
+    border-radius: 1px;
+  }
+
+  /* ── ABOUT STRIP ── */
+  .about-section {
+    padding: 120px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-2);
+    margin-bottom: 20px;
+  }
+
+  .about-text p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .about-visual {
+    position: relative;
+    height: 360px;
+  }
+
+  .about-box {
+    position: absolute;
+    border: 1px solid var(--rule-light);
+    border-radius: 2px;
+  }
+
+  .about-box-1 {
+    inset: 0;
+    background: var(--surface-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .circuit-art {
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+  }
+
+  .about-badge {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    background: var(--accent-glow);
+    border-radius: 2px;
+    padding: 20px 24px;
+    font-family: 'Syne', sans-serif;
+  }
+
+  .badge-num {
+    font-size: 36px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .badge-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-top: 4px;
+  }
+
+  /* ── CAPABILITIES ── */
+  .capabilities-section {
+    padding: 80px 48px 120px;
+    background: var(--surface);
+    overflow: hidden;
+  }
+
+  .cap-scroll {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--rule-light);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .cap-scroll::-webkit-scrollbar { display: none; }
+
+  .cap-item {
+    flex: 0 0 220px;
+    padding: 32px 28px;
+    border-right: 1px solid var(--rule-light);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cap-item:last-child { border-right: none; }
+
+  .cap-icon-wrap {
+    width: 32px;
+    height: 32px;
+    background: rgba(74,124,244,0.12);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cap-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .cap-desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--text-2);
+    line-height: 1.6;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    padding: 120px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-inner {
+    max-width: 680px;
+  }
+
+  .contact-section .section-eyebrow { margin-bottom: 16px; }
+
+  .contact-section h2 {
+    margin-bottom: 24px;
+    font-size: clamp(36px, 5vw, 68px);
+  }
+
+  .contact-desc {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-2);
+    margin-bottom: 48px;
+    max-width: 480px;
+  }
+
+  .contact-email-block {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid var(--rule-light);
+    border-radius: 2px;
+    overflow: hidden;
+    max-width: 500px;
+    margin-bottom: 32px;
+  }
+
+  .contact-email-text {
+    flex: 1;
+    padding: 16px 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    color: var(--text-2);
+    background: var(--surface-2);
+  }
+
+  .contact-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--accent-bright);
+    padding: 0 24px;
+    height: 100%;
+    min-height: 52px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .contact-btn:hover { background: #a0bfff; }
+
+  .contact-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--text-3);
+  }
+
+  .contact-bg {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Syne', sans-serif;
+    font-size: 320px;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.03);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--rule-light);
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: var(--text-2);
+  }
+
+  .footer-copy {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--text-3);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes drawLine {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  .hero-label { animation: fadeIn 0.6s ease 0.1s both; }
+  h1 { animation: fadeUp 0.7s ease 0.2s both; }
+  .hero-sub { animation: fadeUp 0.7s ease 0.35s both; }
+  .hero-actions { animation: fadeUp 0.7s ease 0.45s both; }
+  .hero-stats { animation: fadeUp 0.5s ease 0.6s both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 100px; }
+    .hero-stats { display: none; }
+    .hero-corner { display: none; }
+    .services-section { padding: 80px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .about-section { padding: 80px 24px; grid-template-columns: 1fr; }
+    .about-visual { height: 260px; }
+    .capabilities-section { padding: 60px 24px 80px; }
+    .contact-section { padding: 80px 24px; }
+    .contact-bg { display: none; }
+    footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:22px;">
+    <img src="logo.jpeg" alt="Sineru Labs Logo" class="nav-logo-img" />
+    <span class="dot"></span>
+    <span style="font-size:24px; font-weight:800; font-family:'Syne',sans-serif; letter-spacing:0.04em; color:var(--text);">Sineru Labs</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Start a Project</a>
+</nav>
+
+<br>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-num">RL</div>
+
+  <div class="hero-label">Electronics · Firmware · RF Engineering</div>
+
+  <h1>
+    Built for<br>
+    <span class="accent-word">Precision</span><br>
+    <span class="highlight">Engineering.</span>
+  </h1>
+
+  <p class="hero-sub">
+    Sineru Labs delivers cutting-edge hardware and software solutions — from RF antenna design to regulatory compliance — for modern products that demand reliability.
+  </p>
+  <div class="hero-actions">
+    <a href="#services" class="btn-primary">
+      Explore Services
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="#contact" class="btn-ghost">
+      Start a project <span class="btn-arrow">→</span>
+    </a>
+  </div>
+  <br>
+  <br>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">6+</div>
+      <div class="stat-label">Core Disciplines</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">FCC</div>
+      <div class="stat-label">Compliance Ready</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">20yr</div>
+      <div class="stat-label">Automotive Life Cycle</div>
+    </div>
+  </div>
+
+  <div class="hero-corner">
+    Singapore<br>
+    Based · Global Reach<br>
+    © 2026
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="section-header">
+    <div>
+      <div class="section-eyebrow">What we do</div>
+      <h2>Our Services</h2>
+    </div>
+    <div class="section-num">01</div>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-num">01</span>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="8" stroke="#7ca4f4" stroke-width="1.5"/>
+        <circle cx="20" cy="20" r="14" stroke="#7ca4f4" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+        <circle cx="20" cy="20" r="19" stroke="#7ca4f4" stroke-width="0.75" stroke-dasharray="2 4" opacity="0.3"/>
+        <line x1="20" y1="6" x2="20" y2="12" stroke="#7ca4f4" stroke-width="1.5"/>
+        <line x1="20" y1="28" x2="20" y2="34" stroke="#7ca4f4" stroke-width="1.5"/>
+        <line x1="6" y1="20" x2="12" y2="20" stroke="#7ca4f4" stroke-width="1.5"/>
+        <line x1="28" y1="20" x2="34" y2="20" stroke="#7ca4f4" stroke-width="1.5"/>
+      </svg>
+      <div class="service-title">Radio Frequency &amp; Antenna Design</div>
+      <div class="service-desc">Bluetooth, Wi-Fi, GPS, and ISM band technologies. Superior performance and seamless connectivity for your devices.</div>
+      <div class="service-tags">
+        <span class="tag">BLE</span>
+        <span class="tag">Wi-Fi</span>
+        <span class="tag">GPS</span>
+        <span class="tag">ISM</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">02</span>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 28 L10 16 L16 22 L22 10 L28 18 L34 8" stroke="#7ca4f4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="6" y="30" width="6" height="6" rx="1" stroke="#7ca4f4" stroke-width="1.2"/>
+        <rect x="17" y="30" width="6" height="6" rx="1" stroke="#7ca4f4" stroke-width="1.2"/>
+        <rect x="28" y="30" width="6" height="6" rx="1" stroke="#7ca4f4" stroke-width="1.2"/>
+      </svg>
+      <div class="service-title">Low Noise Analog &amp; Power Supply</div>
+      <div class="service-desc">Low-noise amplifiers and analog-to-digital conversion for precise, high-performance electronics.</div>
+      <div class="service-tags">
+        <span class="tag">LNA</span>
+        <span class="tag">ADC</span>
+        <span class="tag">SMPS</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">03</span>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="8" width="24" height="24" rx="2" stroke="#7ca4f4" stroke-width="1.5"/>
+        <path d="M8 16 h24M8 24 h24M16 8 v24M24 8 v24" stroke="#7ca4f4" stroke-width="0.75" opacity="0.4"/>
+        <circle cx="20" cy="20" r="3" fill="#7ca4f4" opacity="0.8"/>
+        <path d="M12 12 L28 28M28 12 L12 28" stroke="#f4c87c" stroke-width="1" opacity="0.4"/>
+      </svg>
+      <div class="service-title">Regulatory Compliance</div>
+      <div class="service-desc">FCC compliance, EMC/EMI/ESD design and testing for reliable, standards-compliant devices ready for market.</div>
+      <div class="service-tags">
+        <span class="tag">FCC</span>
+        <span class="tag">EMC</span>
+        <span class="tag">EMI</span>
+        <span class="tag">ESD</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">04</span>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="12" y="10" width="16" height="20" rx="1.5" stroke="#7ca4f4" stroke-width="1.5"/>
+        <line x1="12" y1="16" x2="28" y2="16" stroke="#7ca4f4" stroke-width="0.75" opacity="0.5"/>
+        <line x1="12" y1="20" x2="28" y2="20" stroke="#7ca4f4" stroke-width="0.75" opacity="0.5"/>
+        <line x1="12" y1="24" x2="24" y2="24" stroke="#7ca4f4" stroke-width="0.75" opacity="0.5"/>
+        <circle cx="8" cy="16" r="2" stroke="#7ca4f4" stroke-width="1.2"/>
+        <circle cx="8" cy="22" r="2" stroke="#7ca4f4" stroke-width="1.2"/>
+        <circle cx="8" cy="28" r="2" stroke="#7ca4f4" stroke-width="1.2"/>
+        <circle cx="32" cy="16" r="2" stroke="#7ca4f4" stroke-width="1.2"/>
+        <circle cx="32" cy="22" r="2" stroke="#7ca4f4" stroke-width="1.2"/>
+      </svg>
+      <div class="service-title">Microcontroller &amp; Firmware</div>
+      <div class="service-desc">Custom microcontroller solutions and firmware for robust, scalable embedded systems built to perform.</div>
+      <div class="service-tags">
+        <span class="tag">RTOS</span>
+        <span class="tag">Embedded C</span>
+        <span class="tag">HAL</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">05</span>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 30 C8 30 12 28 20 28 C28 28 32 30 32 30" stroke="#7ca4f4" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M12 28 C12 28 14 22 14 16 C14 12 17 10 20 10 C23 10 26 12 26 16 C26 22 28 28 28 28" stroke="#7ca4f4" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="20" cy="10" r="2.5" stroke="#f4c87c" stroke-width="1.2"/>
+        <line x1="16" y1="20" x2="24" y2="20" stroke="#7ca4f4" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.5"/>
+        <line x1="15" y1="24" x2="25" y2="24" stroke="#7ca4f4" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.5"/>
+      </svg>
+      <div class="service-title">Automotive Reliability &amp; Life Cycle</div>
+      <div class="service-desc">Designing for automotive reliability and 20+ year product life cycles, ensuring durability under real-world conditions.</div>
+      <div class="service-tags">
+        <span class="tag">AEC-Q100</span>
+        <span class="tag">MTBF</span>
+        <span class="tag">FMEA</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">06</span>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="8" width="28" height="20" rx="2" stroke="#7ca4f4" stroke-width="1.5"/>
+        <path d="M14 18 L17 15 L20 18 L23 13 L26 18" stroke="#7ca4f4" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="10" y1="32" x2="30" y2="32" stroke="#7ca4f4" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="20" y1="28" x2="20" y2="32" stroke="#7ca4f4" stroke-width="1.5"/>
+      </svg>
+      <div class="service-title">Software Development</div>
+      <div class="service-desc">Python and Java programming, plus web development and design for robust, user-friendly digital solutions.</div>
+      <div class="service-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Java</span>
+        <span class="tag">Web</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-text">
+    <div class="section-eyebrow">Who we are</div>
+    <h2 style="margin-bottom: 28px;">Engineering you can rely on</h2>
+    <p>Sineru Labs is an electronics engineering consultancy focused on delivering <strong>cutting-edge solutions for modern businesses</strong> — from the earliest concept through to production-ready hardware.</p>
+    <p>We combine deep expertise in RF systems, analog design, and embedded firmware with a rigorous approach to reliability and compliance, so your products are built to last.</p>
+    <p>Whether you're developing a consumer IoT device or an automotive system rated for 20+ years of operation, we bring <strong>the same precision and commitment</strong> to every engagement.</p>
+  </div>
+
+  <div class="about-visual">
+    <div class="about-box about-box-1">
+      <!-- SVG Circuit Art -->
+      <svg class="circuit-art" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Circuit trace lines -->
+        <line x1="40" y1="150" x2="100" y2="150" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="100" y1="150" x2="100" y2="80" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="100" y1="80" x2="200" y2="80" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="200" y1="80" x2="200" y2="220" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="200" y1="220" x2="320" y2="220" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="320" y1="220" x2="320" y2="150" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="320" y1="150" x2="360" y2="150" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="160" y1="80" x2="160" y2="40" stroke="#7ca4f4" stroke-width="1" opacity="0.5"/>
+        <line x1="80" y1="40" x2="240" y2="40" stroke="#7ca4f4" stroke-width="1" opacity="0.5"/>
+        <line x1="80" y1="40" x2="80" y2="150" stroke="#7ca4f4" stroke-width="1" opacity="0.5"/>
+        <line x1="240" y1="40" x2="240" y2="120" stroke="#7ca4f4" stroke-width="1" opacity="0.5"/>
+        <line x1="240" y1="120" x2="280" y2="120" stroke="#7ca4f4" stroke-width="1" opacity="0.5"/>
+        <line x1="280" y1="120" x2="280" y2="220" stroke="#7ca4f4" stroke-width="1" opacity="0.5"/>
+
+        <!-- Second layer -->
+        <line x1="60" y1="200" x2="60" y2="260" stroke="#4a7cf4" stroke-width="0.75" opacity="0.4"/>
+        <line x1="60" y1="260" x2="340" y2="260" stroke="#4a7cf4" stroke-width="0.75" opacity="0.4"/>
+        <line x1="340" y1="260" x2="340" y2="120" stroke="#4a7cf4" stroke-width="0.75" opacity="0.4"/>
+
+        <!-- Components: resistors -->
+        <rect x="115" y="143" width="30" height="14" rx="1" stroke="#7ca4f4" stroke-width="1" fill="#161b22"/>
+        <rect x="225" y="143" width="30" height="14" rx="1" stroke="#7ca4f4" stroke-width="1" fill="#161b22"/>
+
+        <!-- IC chip -->
+        <rect x="168" y="100" width="64" height="48" rx="2" stroke="#7ca4f4" stroke-width="1.5" fill="#111419"/>
+        <line x1="176" y1="100" x2="176" y2="92" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="192" y1="100" x2="192" y2="92" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="208" y1="100" x2="208" y2="92" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="176" y1="148" x2="176" y2="156" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="192" y1="148" x2="192" y2="156" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="168" y1="114" x2="160" y2="114" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="168" y1="128" x2="160" y2="128" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="232" y1="114" x2="240" y2="114" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="232" y1="128" x2="240" y2="128" stroke="#7ca4f4" stroke-width="1"/>
+        <circle cx="174" cy="106" r="2" fill="#7ca4f4" opacity="0.5"/>
+
+        <!-- Capacitors -->
+        <line x1="60" y1="143" x2="60" y2="157" stroke="#7ca4f4" stroke-width="1"/>
+        <line x1="50" y1="148" x2="70" y2="148" stroke="#7ca4f4" stroke-width="1.5"/>
+        <line x1="50" y1="152" x2="70" y2="152" stroke="#7ca4f4" stroke-width="1.5"/>
+
+        <!-- Solder pads / vias -->
+        <circle cx="100" cy="150" r="3" fill="#7ca4f4" opacity="0.6"/>
+        <circle cx="200" cy="80" r="3" fill="#7ca4f4" opacity="0.6"/>
+        <circle cx="200" cy="220" r="3" fill="#7ca4f4" opacity="0.6"/>
+        <circle cx="320" cy="150" r="3" fill="#7ca4f4" opacity="0.6"/>
+        <circle cx="160" cy="80" r="2.5" fill="#f4c87c" opacity="0.7"/>
+        <circle cx="80" cy="150" r="2.5" fill="#f4c87c" opacity="0.7"/>
+        <circle cx="280" cy="220" r="2.5" fill="#4a7cf4" opacity="0.6"/>
+        <circle cx="240" cy="120" r="2.5" fill="#4a7cf4" opacity="0.6"/>
+
+        <!-- Labels -->
+        <text x="186" y="128" font-family="DM Mono, monospace" font-size="8" fill="#7ca4f4" opacity="0.8" text-anchor="middle">MCU</text>
+      </svg>
+    </div>
+
+    <div class="about-badge">
+      <div class="badge-num">20+</div>
+      <div class="badge-label">Year Life Cycle</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-bg">✦</div>
+  <div class="contact-inner">
+    <div class="section-eyebrow">Get in touch</div>
+    <h2>Let's build something great.</h2>
+    <p class="contact-desc">Have a project in mind or want to discuss your next big idea? Reach out — we'd love to hear what you're working on.</p>
+
+    <div class="contact-email-block">
+      <div class="contact-email-text">saritadevin@sinerulabs.com</div>
+      <a href="mailto:saritadevin@sinerulabs.com" class="contact-btn">Send Email →</a>
+    </div>
+
+    <p class="contact-note">Response within 1–2 business days.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Sineru Labs</div>
+  <div class="footer-copy">© 2026 Sineru Labs. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
