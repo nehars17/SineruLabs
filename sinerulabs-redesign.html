@@ -378,6 +378,31 @@
     cursor: default;
   }
 
+    .service-icon-corner {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 64px;
+      height: 64px;
+      z-index: 2;
+      opacity: 0.99;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      pointer-events: none;
+    }
+
+    .service-image-main {
+      display: block;
+      margin: 0 auto 32px auto;
+      width: 240px;
+      height: 240px;
+      object-fit: contain;
+      border-radius: 0;
+      box-shadow: none;
+      background: none;
+    }
+
   .service-card:hover {
     background: var(--surface-3);
   }
@@ -811,7 +836,7 @@
   <div class="services-grid">
     <div class="service-card">
       <span class="service-num">01</span>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="service-icon-corner" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="20" cy="20" r="8" stroke="#7ca4f4" stroke-width="1.5"/>
         <circle cx="20" cy="20" r="14" stroke="#7ca4f4" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
         <circle cx="20" cy="20" r="19" stroke="#7ca4f4" stroke-width="0.75" stroke-dasharray="2 4" opacity="0.3"/>
@@ -820,6 +845,7 @@
         <line x1="6" y1="20" x2="12" y2="20" stroke="#7ca4f4" stroke-width="1.5"/>
         <line x1="28" y1="20" x2="34" y2="20" stroke="#7ca4f4" stroke-width="1.5"/>
       </svg>
+      <img src="service1.jpg" alt="RF & Antenna Icon" class="service-image-main" />
       <div class="service-title">Radio Frequency &amp; Antenna Design</div>
       <div class="service-desc">Bluetooth, Wi-Fi, GPS, and ISM band technologies. Superior performance and seamless connectivity for your devices.</div>
       <div class="service-tags">
@@ -830,14 +856,15 @@
       </div>
     </div>
 
-    <div class="service-card">
-      <span class="service-num">02</span>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <svg class="service-icon-corner" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M4 28 L10 16 L16 22 L22 10 L28 18 L34 8" stroke="#7ca4f4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         <rect x="6" y="30" width="6" height="6" rx="1" stroke="#7ca4f4" stroke-width="1.2"/>
         <rect x="17" y="30" width="6" height="6" rx="1" stroke="#7ca4f4" stroke-width="1.2"/>
         <rect x="28" y="30" width="6" height="6" rx="1" stroke="#7ca4f4" stroke-width="1.2"/>
       </svg>
+      <img src="service2.jpg" alt="Analog & Power Icon" class="service-image-main" />
       <div class="service-title">Low Noise Analog &amp; Power Supply</div>
       <div class="service-desc">Low-noise amplifiers and analog-to-digital conversion for precise, high-performance electronics.</div>
       <div class="service-tags">
@@ -847,14 +874,15 @@
       </div>
     </div>
 
-    <div class="service-card">
-      <span class="service-num">03</span>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="service-card">
+        <span class="service-num">03</span>
+        <svg class="service-icon-corner" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="8" y="8" width="24" height="24" rx="2" stroke="#7ca4f4" stroke-width="1.5"/>
         <path d="M8 16 h24M8 24 h24M16 8 v24M24 8 v24" stroke="#7ca4f4" stroke-width="0.75" opacity="0.4"/>
         <circle cx="20" cy="20" r="3" fill="#7ca4f4" opacity="0.8"/>
         <path d="M12 12 L28 28M28 12 L12 28" stroke="#f4c87c" stroke-width="1" opacity="0.4"/>
       </svg>
+      <img src="service3.jpg" alt="Compliance Icon" class="service-image-main" />
       <div class="service-title">Regulatory Compliance</div>
       <div class="service-desc">FCC compliance, EMC/EMI/ESD design and testing for reliable, standards-compliant devices ready for market.</div>
       <div class="service-tags">
@@ -865,9 +893,9 @@
       </div>
     </div>
 
-    <div class="service-card">
-      <span class="service-num">04</span>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="service-card">
+        <span class="service-num">04</span>
+        <svg class="service-icon-corner" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="12" y="10" width="16" height="20" rx="1.5" stroke="#7ca4f4" stroke-width="1.5"/>
         <line x1="12" y1="16" x2="28" y2="16" stroke="#7ca4f4" stroke-width="0.75" opacity="0.5"/>
         <line x1="12" y1="20" x2="28" y2="20" stroke="#7ca4f4" stroke-width="0.75" opacity="0.5"/>
@@ -878,6 +906,7 @@
         <circle cx="32" cy="16" r="2" stroke="#7ca4f4" stroke-width="1.2"/>
         <circle cx="32" cy="22" r="2" stroke="#7ca4f4" stroke-width="1.2"/>
       </svg>
+      <img src="service4.jpg" alt="Microcontroller Icon" class="service-image-main" />
       <div class="service-title">Microcontroller &amp; Firmware</div>
       <div class="service-desc">Custom microcontroller solutions and firmware for robust, scalable embedded systems built to perform.</div>
       <div class="service-tags">
@@ -887,15 +916,16 @@
       </div>
     </div>
 
-    <div class="service-card">
-      <span class="service-num">05</span>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="service-card">
+        <span class="service-num">05</span>
+        <svg class="service-icon-corner" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 30 C8 30 12 28 20 28 C28 28 32 30 32 30" stroke="#7ca4f4" stroke-width="1.5" stroke-linecap="round"/>
         <path d="M12 28 C12 28 14 22 14 16 C14 12 17 10 20 10 C23 10 26 12 26 16 C26 22 28 28 28 28" stroke="#7ca4f4" stroke-width="1.2" stroke-linecap="round"/>
         <circle cx="20" cy="10" r="2.5" stroke="#f4c87c" stroke-width="1.2"/>
         <line x1="16" y1="20" x2="24" y2="20" stroke="#7ca4f4" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.5"/>
         <line x1="15" y1="24" x2="25" y2="24" stroke="#7ca4f4" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.5"/>
       </svg>
+      <img src="service5.jpg" alt="Automotive Icon" class="service-image-main" />
       <div class="service-title">Automotive Reliability &amp; Life Cycle</div>
       <div class="service-desc">Designing for automotive reliability and 20+ year product life cycles, ensuring durability under real-world conditions.</div>
       <div class="service-tags">
@@ -905,14 +935,15 @@
       </div>
     </div>
 
-    <div class="service-card">
-      <span class="service-num">06</span>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="service-card">
+        <span class="service-num">06</span>
+        <svg class="service-icon-corner" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="6" y="8" width="28" height="20" rx="2" stroke="#7ca4f4" stroke-width="1.5"/>
         <path d="M14 18 L17 15 L20 18 L23 13 L26 18" stroke="#7ca4f4" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
         <line x1="10" y1="32" x2="30" y2="32" stroke="#7ca4f4" stroke-width="1.5" stroke-linecap="round"/>
         <line x1="20" y1="28" x2="20" y2="32" stroke="#7ca4f4" stroke-width="1.5"/>
       </svg>
+      <img src="service6.jpg" alt="Software Icon" class="service-image-main" />
       <div class="service-title">Software Development</div>
       <div class="service-desc">Python and Java programming, plus web development and design for robust, user-friendly digital solutions.</div>
       <div class="service-tags">
